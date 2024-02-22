@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ordersRecycler"
+        android:enabled="true"
+        android:icon="@drawable/orders"
+        android:title="Работа"/>
+    <item
+        android:id="@+id/favorites"
+        android:enabled="true"
+        android:icon="@drawable/favorites"
+        android:title="Избранное"/>
+    <item
+        android:id="@+id/new_order"
+        android:enabled="true"
+        android:icon="@drawable/logo_add"
+        android:title="Создать"/>
+    <item
+        android:id="@+id/chats"
+        android:enabled="true"
+        android:icon="@drawable/chats"
+        android:title="Чаты"/>
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="Профиль"/>
+</menu>
