@@ -19,23 +19,12 @@
         <activity
             android:name=".Activity.CentralActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activity.ChatsActivity"
-            android:exported="false" />
-
         <service android:name=".NotificationService" />
-
-        <activity
-            android:name=".Activity.HomePage"
-            android:exported="false" />
         <activity
             android:name=".Activity.Registration"
             android:exported="false" />
         <activity
             android:name=".Activity.Login"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,5 +33,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

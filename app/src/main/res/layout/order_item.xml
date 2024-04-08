@@ -25,14 +25,6 @@
                 android:layout_gravity="center"
                 android:text="Грузчик в Чижик"/>
 
-            <TextView
-                android:id="@+id/worker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:layout_gravity="center"
-                android:text="работников: 2"/>
-
         </LinearLayout>
 
         <TextView
@@ -71,6 +63,8 @@
                 android:textSize="16sp"
                 android:layout_gravity="left"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="Аксайский проспект 12/1 строение а"/>
 
             <TextView
@@ -81,8 +75,10 @@
                 android:layout_weight="3"
                 android:layout_gravity="right"
                 android:gravity="right"
+                android:singleLine="true"
                 android:textStyle="bold"
-                android:text="3 375 руб"/>
+                android:ellipsize="end"
+                android:text="3342 3752334 руб"/>
         </LinearLayout>
 
 

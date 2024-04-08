@@ -11,6 +11,7 @@ import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstIntent
 import com.karabok.workstep.DbApi.RequestDbApi
 import com.karabok.workstep.EntityTab.EntityOrders
+import com.karabok.workstep.Loguru.Luna
 import com.karabok.workstep.R
 import com.karabok.workstep.Recyclers.RecyclerOrder
 import com.karabok.workstep.Utils.FragmentHelper
@@ -80,14 +81,10 @@ class HomeFragment : Fragment(), RecyclerOrder.OnItemClickListener {
                                 orderJson["timeEnd"].toString().toInt(),
                                 orderJson["description"].toString().trim('"'),
                                 orderJson["salary"].toString().toInt(),
-                                orderJson["needWorker"].toString().toInt(),
-                                orderJson["haveWorker"].toString().toInt(),
                                 orderJson["cityName"].toString().trim('"'),
-                                orderJson["street"].toString().trim('"'),
-                                orderJson["numberHouse"].toString().trim('"'),
                                 orderJson["timePublish"].toString().trim('"'),
-                                orderJson["statusId"].toString().toInt(),
                                 orderJson["userAuthor"].toString().toInt(),
+                                orderJson["categoryName"].toString().trim('"'),
                                 orderJson["subcategoryName"].toString().trim('"'),
                                 orderJson["dateStart"].toString().trim('"')
                             )

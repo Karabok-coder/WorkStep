@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View.GONE
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
@@ -144,6 +145,7 @@ class Registration : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().apply {
                         replace(R.id.code_fragment_layout, codeFragment)
                         commit()
+                        regPanel.visibility = GONE
                         progressRegistration.visibility = INVISIBLE
                         codeFragmentLayout.visibility = VISIBLE
                     }
@@ -239,5 +241,4 @@ class Registration : AppCompatActivity() {
         }
         return pointStrength
     }
-
 }

@@ -19,7 +19,6 @@ class RecyclerOrder(
         val description: TextView = itemView.findViewById(R.id.description)
         val time: TextView = itemView.findViewById(R.id.time)
         val salary: TextView = itemView.findViewById(R.id.salary)
-        val worker: TextView = itemView.findViewById(R.id.worker)
         val fullAddress: TextView = itemView.findViewById(R.id.fullAddress)
 
         init {
@@ -44,7 +43,6 @@ class RecyclerOrder(
         holder.description.text = order[position].description
         holder.time.text = "C $timeStart по $timeEnd"
         holder.salary.text = "${order[position].salary} руб"
-        holder.worker.text = "Люди: ${order[position].needWorker}"
         holder.fullAddress.text = order[position].cityName
     }
 

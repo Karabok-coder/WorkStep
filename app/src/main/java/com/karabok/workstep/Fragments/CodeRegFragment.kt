@@ -17,7 +17,7 @@ import com.karabok.workstep.Activity.CentralActivity
 import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstIntent
 import com.karabok.workstep.DbApi.RequestDbApi
-import com.karabok.workstep.Utils.FragmentHelper
+import com.karabok.workstep.Loguru.Luna
 import com.karabok.workstep.Utils.Rand
 import com.karabok.workstep.Utils.TimeUtil
 import com.karabok.workstep.databinding.FragmentCodeRegBinding
@@ -28,7 +28,6 @@ import org.json.JSONObject
 
 class CodeRegFragment : Fragment() {
     private lateinit var binding: FragmentCodeRegBinding
-    private var code: String = ""
 
     private var randSeed: Long? = null
     private var password: String? = null
@@ -36,7 +35,11 @@ class CodeRegFragment : Fragment() {
     private var nickname: String? = null
     private var firstName: String? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentCodeRegBinding.inflate(inflater, container, false)
         val dataBundle = arguments
         if (dataBundle != null) {
@@ -64,6 +67,13 @@ class CodeRegFragment : Fragment() {
             onTextDeleteListener(code4, code3)
             onTextDeleteListener(code5, code4)
 
+            settingTextEdit(code1)
+            settingTextEdit(code2)
+            settingTextEdit(code3)
+            settingTextEdit(code4)
+            settingTextEdit(code5)
+            settingTextEdit(code6)
+
             clearCode.setOnClickListener {
                 cleanCode()
             }
@@ -78,6 +88,9 @@ class CodeRegFragment : Fragment() {
                     code5.text?.clear()
                     code5.requestFocus()
                     return@setOnKeyListener true
+                }
+                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    applyCode(getCodeInTextInput())
                 }
                 return@setOnKeyListener false
             }
@@ -94,14 +107,12 @@ class CodeRegFragment : Fragment() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    applyCode()
                 }
             })
         }
     }
 
-    private fun applyCode(){
-        code = getCodeInTextInput()
+    private fun applyCode(code: String){
         var genCode: String = ""
         if (randSeed != null){
             genCode = Rand(randSeed!!.toLong()).nextInt(100000, 999999).toString()
@@ -114,7 +125,7 @@ class CodeRegFragment : Fragment() {
 
         binding.progressCode.visibility = VISIBLE
 
-        if(code == genCode){
+        if(code == genCode) {
             val intent = Intent(activity, CentralActivity::class.java)
             CoroutineScope(Dispatchers.IO).launch {
                 launch {
@@ -126,8 +137,7 @@ class CodeRegFragment : Fragment() {
                             .put("password", password)
                             .put("nickname", nickname)
                             .put("dateReg", TimeUtil.getMoscowTime().toString())
-                            .put("lastVisit", TimeUtil.getMoscowTime().toString()
-                            ).toString()
+                            .toString()
                     )
 
                     val userJson = JsonParser.parseString(insertJson).asJsonObject.get("val").asInt
@@ -145,11 +155,13 @@ class CodeRegFragment : Fragment() {
             binding.progressCode.visibility = INVISIBLE
             startActivity(intent)
         }
-        else{
+        else {
             cleanCode()
             binding.errorInputCode.text = "Не верный код"
             binding.progressCode.visibility = INVISIBLE
+            return
         }
+        return
     }
 
     private fun onTextDeleteListener(currentTextInput: TextInputEditText, backTextInput: TextInputEditText) {
@@ -161,6 +173,23 @@ class CodeRegFragment : Fragment() {
             }
             return@setOnKeyListener false
         }
+    }
+
+    private fun settingTextEdit(currentTextInput: TextInputEditText) {
+        currentTextInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                binding.errorInputCode.text = ""
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(currentTextInput.text.toString().length > 1){
+                    currentTextInput.setText(currentTextInput.text.toString()[0].toString())
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+        })
     }
 
     private fun onTextChangeListener(currentTextInput: TextInputEditText, nextTextInput: TextInputEditText){

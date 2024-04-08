@@ -2,7 +2,6 @@ package com.karabok.workstep.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.karabok.workstep.Fragments.ChatsFragment
 import com.karabok.workstep.Fragments.HomeFragment
 import com.karabok.workstep.R
 import com.karabok.workstep.databinding.ActivityCentralBinding
@@ -22,7 +21,7 @@ class CentralActivity : AppCompatActivity() {
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.central_fragment, HomeFragment.newInstance())
+            .replace(centralFragment, HomeFragment.newInstance())
             .commit()
 
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
@@ -31,12 +30,6 @@ class CentralActivity : AppCompatActivity() {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(centralFragment, HomeFragment.newInstance())
-                        .commit()
-                }
-                R.id.chats -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(centralFragment, ChatsFragment.newInstance())
                         .commit()
                 }
             }

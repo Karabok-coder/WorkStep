@@ -6,20 +6,10 @@
         android:icon="@drawable/orders"
         android:title="Работа"/>
     <item
-        android:id="@+id/favorites"
-        android:enabled="true"
-        android:icon="@drawable/favorites"
-        android:title="Избранное"/>
-    <item
         android:id="@+id/new_order"
         android:enabled="true"
         android:icon="@drawable/logo_add"
         android:title="Создать"/>
-    <item
-        android:id="@+id/chats"
-        android:enabled="true"
-        android:icon="@drawable/chats"
-        android:title="Чаты"/>
     <item
         android:id="@+id/profile"
         android:enabled="true"

@@ -44,154 +44,141 @@
                 android:background="?attr/colorSurface"/>
 
         </LinearLayout>
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progress_order"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminate="true"
-            android:visibility="invisible"
-            app:indicatorColor="?attr/colorOnPrimaryContainer"/>
-
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="5dp">
-
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/name_work"
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Грузчик в чижик"
                     android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:textStyle="bold"/>
-
+                    android:indeterminate="true"
+                    android:visibility="invisible"
+                    app:indicatorColor="?attr/colorOnPrimaryContainer"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/name_work"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Грузчик в чижик"
+                                android:layout_gravity="center"
+                                android:textSize="28sp"
+                                android:textStyle="bold"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="3dp">
+
+                                <TextView
+                                    android:id="@+id/start_date_work"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Дата работы"
+                                    android:textStyle="bold"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center"
+                                    android:textSize="18sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="3dp">
+
+                                <TextView
+                                    android:id="@+id/time_work"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:text="С 9:00 до 21:00"/>
+
+                                <TextView
+                                    android:id="@+id/salary"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="22sp"
+                                    android:layout_weight="3"
+                                    android:layout_gravity="center"
+                                    android:gravity="right|center"
+                                    android:text="3 375 руб"
+                                    android:textStyle="bold"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/start_date_work"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/full_address"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Дата работы"
                         android:textStyle="bold"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:textSize="18sp"/>
+                        android:text="Аксайский проспект 12 строение а 12/34 отдел 5 - и / 4"
+                        android:textSize="14sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="1dp"
+                        android:background="@drawable/line"
+                        android:layout_marginTop="5dp"/>
 
                     <TextView
-                        android:id="@+id/workers"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Описание"
+                        android:textStyle="bold"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue velit justo, nec fermentum massa lobortis non. Sed dolor nunc, porttitor id felis eu, euismod lobortis leo. Praesent laoreet, elit ac tempor consequat, neque mi sagittis enim, at tempus lacus ligula at orci. Sed blandit odio et egestas ullamcorper. Quisque pellentesque pretium gravida. Nulla eu consequat turpis, id tincidunt diam. Sed semper felis sapien, a rhoncus erat egestas a. Quisque vitae lacus ut massa posuere egestas. Morbi metus."
                         android:textSize="16sp"
-                        android:layout_weight="3"
-                        android:layout_gravity="center"
-                        android:gravity="right"
-                        android:text="Люди: 123" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="3dp">
+                        android:layout_margin="10dp"/>
 
                     <TextView
-                        android:id="@+id/time_work"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/id_work"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="14sp"
-                        android:layout_gravity="center"
-                        android:text="С 9:00 до 21:00"/>
-
-                    <TextView
-                        android:id="@+id/salary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="22sp"
-                        android:layout_weight="3"
-                        android:layout_gravity="center"
-                        android:gravity="right|center"
-                        android:text="3 375 руб"
-                        android:textStyle="bold"/>
+                        android:text="Номер объявления: 3763618"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="10dp"
+                        android:textSize="13sp"/>
 
                 </LinearLayout>
-
             </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/full_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Аксайский проспект 12 строение а 12/34 отдел 5 - и / 4"
-            android:textSize="14sp"/>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_height="1dp"
-            android:background="@drawable/line"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Описание"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue velit justo, nec fermentum massa lobortis non. Sed dolor nunc, porttitor id felis eu, euismod lobortis leo. Praesent laoreet, elit ac tempor consequat, neque mi sagittis enim, at tempus lacus ligula at orci. Sed blandit odio et egestas ullamcorper. Quisque pellentesque pretium gravida. Nulla eu consequat turpis, id tincidunt diam. Sed semper felis sapien, a rhoncus erat egestas a. Quisque vitae lacus ut massa posuere egestas. Morbi metus."
-            android:textSize="16sp"
-            android:layout_margin="10dp"/>
-
-        <TextView
-            android:id="@+id/id_work"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Номер объявления: 3763618"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="10dp"
-            android:textSize="13sp"/>
-
-        <Button
-            android:id="@+id/apply_order"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Принять заказ"
-            style="@style/Widget.Material3.Button.OutlinedButton"/>
-
-    </LinearLayout>
-
+        </ScrollView>
     </LinearLayout>
 </ScrollView>

@@ -47,40 +47,6 @@ class OrderFragment : Fragment() {
                 HomeFragment.newInstance(),
                 requireActivity().supportFragmentManager.beginTransaction())
         }
-
-        binding.applyOrder.setOnClickListener {
-            var profile: EntityProfile? = null
-            binding.progressOrder.visibility = VISIBLE
-            CoroutineScope(Dispatchers.IO).launch {
-                launch {
-                    RequestDbApi.select(
-                        ConstAPI.selectProfileUserId,
-                        "userId=${order?.userAuthor}"
-                    )
-                }.join()
-
-                CoroutineScope(Dispatchers.Main).launch {
-                    Luna.log(order.toString())
-                    Luna.log(profile.toString())
-
-                    if (profile == null){
-                        Luna.error("profile == null")
-                        binding.progressOrder.visibility = INVISIBLE
-                        return@launch
-                    }
-
-//                    val jsonChat = ChatJSON.toJson(сhatOBJ)
-
-
-//                    val jsonChatTemp = grovy.read(ConstFile.chatsFile)
-//
-//                    val cahtTemp = ChatJSON.fromJson(jsonChatTemp)
-
-//                    grovy.appendEnd(, ConstFile.chatsFile)
-                    binding.progressOrder.visibility = INVISIBLE
-                }.join()
-            }
-        }
     }
 
     companion object {
@@ -96,7 +62,6 @@ class OrderFragment : Fragment() {
         timeWork.text = "C $timeStart по $timeEnd"
         description.text = item.description
         salary.text = "${item.salary} руб"
-        workers.text = "Люди: ${item.needWorker}"
         fullAddress.text = item.cityName
     }
 }

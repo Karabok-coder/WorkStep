@@ -1,5 +1,8 @@
 package com.karabok.workstep
 
+import com.karabok.workstep.Const.ConstAPI
+import com.karabok.workstep.Loguru.Luna
+import com.karabok.workstep.Utils.Rand
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -9,9 +12,10 @@ import okio.ByteString
 
 object WebSocket {
     private val client = OkHttpClient()
+    private val rand = Rand()
 
     private val request = Request.Builder()
-        .url("ws://your-websocket-url")
+        .url("ws://${ConstAPI.domainLink}/ws/${rand.nextInt(100000)}")
         .build()
 
     private val listener = object : WebSocketListener() {
@@ -22,7 +26,7 @@ object WebSocket {
 
         override fun onMessage(webSocket: WebSocket, text: String) {
             super.onMessage(webSocket, text)
-            // Получено текстовое сообщение
+            Luna.log(text)
         }
 
         override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
@@ -32,7 +36,7 @@ object WebSocket {
 
         override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
             super.onClosing(webSocket, code, reason)
-            // WebSocket подключение закрывается
+            Luna.log("Подключение разорвано")
         }
 
         override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {

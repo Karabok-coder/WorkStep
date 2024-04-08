@@ -10,14 +10,10 @@ data class EntityOrders(
     val timeEnd: Int,
     val description: String?,
     val salary: Int,
-    val needWorker: Int,
-    val haveWorker: Int,
     val cityName: String?,
-    val street: String?,
-    val numberHouse: String?,
     val timePublish: String?,
-    val statusId: Int,
     val userAuthor: Int,
+    val categoryName: String?,
     val subcategoryName: String?,
     val dateStart: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
@@ -27,34 +23,25 @@ data class EntityOrders(
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
-        parcel.readInt(),
-        parcel.readInt(),
-        parcel.readString(),
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
-        parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(id)
         parcel.writeString(nameWork)
         parcel.writeInt(timeStart)
         parcel.writeInt(timeEnd)
         parcel.writeString(description)
         parcel.writeInt(salary)
-        parcel.writeInt(needWorker)
-        parcel.writeInt(haveWorker)
         parcel.writeString(cityName)
-        parcel.writeString(street)
-        parcel.writeString(numberHouse)
         parcel.writeString(timePublish)
-        parcel.writeInt(statusId)
         parcel.writeInt(userAuthor)
+        parcel.writeString(categoryName)
         parcel.writeString(subcategoryName)
         parcel.writeString(dateStart)
     }
