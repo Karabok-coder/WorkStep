@@ -24,6 +24,7 @@ class CreateOrderList3 : Fragment() {
     }
 
     companion object {
+        @JvmStatic
         fun newInstance() = CreateOrderList3()
     }
 

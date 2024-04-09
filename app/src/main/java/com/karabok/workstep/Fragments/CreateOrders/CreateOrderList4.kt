@@ -2,7 +2,6 @@ package com.karabok.workstep.Fragments.CreateOrders
 
 import android.content.Context
 import android.os.Bundle
-import android.view.FrameMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,7 @@ import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstApp
 import com.karabok.workstep.Const.ConstIntent
 import com.karabok.workstep.Fragments.HomeFragment
-import com.karabok.workstep.Loguru.Luna
+import com.karabok.workstep.Interfaces.OnBottomNavigationChangedListener
 import com.karabok.workstep.R
 import com.karabok.workstep.Utils.LoginToken
 import com.karabok.workstep.Utils.Requests
@@ -24,11 +23,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.json.JSONObject
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 class CreateOrderList4 : Fragment() {
     private lateinit var binding: FragmentCreateOrderList4Binding
+    private var listener: OnBottomNavigationChangedListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCreateOrderList4Binding.inflate(inflater, container, false)
@@ -37,7 +35,17 @@ class CreateOrderList4 : Fragment() {
     }
 
     companion object {
+        @JvmStatic
         fun newInstance() = CreateOrderList4()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnBottomNavigationChangedListener) {
+            listener = context
+        } else {
+            throw RuntimeException("$context must implement OnBottomNavigationChangedListener")
+        }
     }
 
     override fun onStart() {
@@ -88,7 +96,15 @@ class CreateOrderList4 : Fragment() {
                             .toString()
                     )
                 }.join()
+
+                val fragmentManager = activity?.supportFragmentManager
+                val newFragment = HomeFragment.newInstance()
+                val transaction = fragmentManager?.beginTransaction()
+                transaction?.replace(R.id.central_fragment, newFragment)
+                transaction?.commit()
+
             }
+            listener?.updateBottomNavigation(R.id.orders)
         }
     }
 
@@ -195,6 +211,11 @@ class CreateOrderList4 : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
     }
 
 }

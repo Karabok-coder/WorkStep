@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.karabok.workstep.Const.ConstIntent
 import com.karabok.workstep.Fragments.CodeRegFragment
 import com.karabok.workstep.R
@@ -48,6 +49,7 @@ class CreateOrderList1 : Fragment() {
     }
 
     companion object {
+        @JvmStatic
         fun newInstance() = CreateOrderList1()
     }
 }

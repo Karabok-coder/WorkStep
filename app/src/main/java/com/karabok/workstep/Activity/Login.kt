@@ -12,6 +12,7 @@ import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstApp
 import com.karabok.workstep.DbApi.RequestDbApi
 import com.karabok.workstep.EntityTab.EntityUsers
+import com.karabok.workstep.Utils.Hash
 import com.karabok.workstep.Utils.LoginToken
 import com.karabok.workstep.databinding.ActivityLoginBinding
 import kotlinx.coroutines.CoroutineScope
@@ -62,7 +63,12 @@ class Login : AppCompatActivity() {
                     var user: EntityUsers? = null
 
                     launch {
-                        val userReq = RequestDbApi.select(ConstAPI.emailUser, email.text.toString())
+                        var userReq = ""
+                        userReq = RequestDbApi.select(
+                            ConstAPI.selectEmailUser,
+                            "email=${email.text.toString()}"
+                        )
+
                         val jsonObject = JsonParser.parseString(userReq).asJsonObject.get("content").asJsonObject
                         for ((key, value) in jsonObject.entrySet()) {
                             val userJson = jsonObject.get(key).asJsonObject
@@ -85,7 +91,7 @@ class Login : AppCompatActivity() {
                         }
                         return@launch
                     }
-                    else if (user?.password != password.text.toString()){
+                    else if (user?.password != Hash.sha256(password.text.toString())){
                         val errorText: CharSequence = "Не верный"
                         runOnUiThread {
                             password.error = errorText
@@ -114,7 +120,7 @@ class Login : AppCompatActivity() {
                     val sharedPreferences = getSharedPreferences(ConstApp.prefToken, Context.MODE_PRIVATE)
 
                     if(!LoginToken.isLogged(sharedPreferences)){
-                        LoginToken.saveToken("${user?.id}__${user?.email}__${user?.nickname}", sharedPreferences)
+                        LoginToken.setToken("${user?.id}__${user?.email}__${user?.nickname}", sharedPreferences)
                     }
                 }
             }

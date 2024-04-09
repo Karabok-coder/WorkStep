@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.JsonParser
 import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstIntent
@@ -69,7 +70,6 @@ class HomeFragment : Fragment(), RecyclerOrder.OnItemClickListener {
             withContext(Dispatchers.IO) {
                 launch {
                     val ordersReq = RequestDbApi.select(ConstAPI.allOrders)
-                    Luna.log(ordersReq.toString())
                     val jsonObject = JsonParser.parseString(ordersReq).asJsonObject.get("content").asJsonObject
 
                     for ((key, value) in jsonObject.entrySet()) {
@@ -97,7 +97,7 @@ class HomeFragment : Fragment(), RecyclerOrder.OnItemClickListener {
                         binding.apply {
                             ordersRecycler.visibility = View.VISIBLE
                             binding.textEmptyList.visibility = View.GONE
-                            ordersRecycler.layoutManager = LinearLayoutManager(requireContext())
+                            ordersRecycler.layoutManager = LinearLayoutManager(activity)
                             adapter = RecyclerOrder(orders, this@HomeFragment)
                             ordersRecycler.adapter = adapter
                             swipeRefresh.isRefreshing = false

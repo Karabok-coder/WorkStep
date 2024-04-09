@@ -7,7 +7,7 @@ object LoginToken {
     // Ключ для сохранения токена доступа в SharedPreferences
     private const val TOKEN_KEY = "token_key"
 
-    public fun saveToken(token: String, sharedPreferences: SharedPreferences?) {
+    public fun setToken(token: String, sharedPreferences: SharedPreferences?) {
         // Сохраняем токен доступа в SharedPreferences
         val editor = sharedPreferences?.edit()
         editor?.putString(TOKEN_KEY, token)
@@ -21,5 +21,11 @@ object LoginToken {
     public fun isLogged(sharedPreferences: SharedPreferences?): Boolean {
         // Проверяем, сохранен ли токен доступа в SharedPreferences
         return sharedPreferences?.getString(TOKEN_KEY, null) != null
+    }
+
+    public fun deleteToken(sharedPreferences: SharedPreferences?){
+        val editor = sharedPreferences?.edit()
+        editor?.remove(TOKEN_KEY)
+        editor?.apply()
     }
 }

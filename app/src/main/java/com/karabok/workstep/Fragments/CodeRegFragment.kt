@@ -155,7 +155,7 @@ class CodeRegFragment : Fragment() {
                     )
 
                     val sharedPreferences = activity?.getSharedPreferences(ConstApp.prefToken, Context.MODE_PRIVATE)
-                    LoginToken.saveToken("${userInsertId}__${email}__${nickname}", sharedPreferences)
+                    LoginToken.setToken("${userInsertId}__${email}__${nickname}", sharedPreferences)
                 }.join()
             }
             binding.progressCode.visibility = INVISIBLE

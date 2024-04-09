@@ -72,13 +72,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:layout_gravity="right"
                 android:gravity="right"
                 android:singleLine="true"
                 android:textStyle="bold"
                 android:ellipsize="end"
-                android:text="3342 3752334 руб"/>
+                android:text="334233123 руб"/>
         </LinearLayout>
 
 

@@ -11,7 +11,10 @@ object ConstAPI {
     public val insertOrder: String = "/api/v1/insert/order/"
     public val selectProfileUserId: String = "/api/v1/select/userIdProfile/"
 
-    public val emailUser: String = "/api/v1/select/emailUser/"
+    public val selectEmailUser: String = "/api/v1/select/emailUser/"
+
+    public val selectNicknameUser: String = "/api/v1/select/nicknameUser/"
+    public val updateNicknameUser: String = "/api/v1/update/user/nickname/"
 
     public val existUserNickname: String = "/api/v1/exist/userNickname/"
     public val existUserEmail: String = "/api/v1/exist/userEmail/"
