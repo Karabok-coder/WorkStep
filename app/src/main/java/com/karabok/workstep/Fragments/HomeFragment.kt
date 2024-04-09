@@ -69,6 +69,7 @@ class HomeFragment : Fragment(), RecyclerOrder.OnItemClickListener {
             withContext(Dispatchers.IO) {
                 launch {
                     val ordersReq = RequestDbApi.select(ConstAPI.allOrders)
+                    Luna.log(ordersReq.toString())
                     val jsonObject = JsonParser.parseString(ordersReq).asJsonObject.get("content").asJsonObject
 
                     for ((key, value) in jsonObject.entrySet()) {
@@ -81,11 +82,11 @@ class HomeFragment : Fragment(), RecyclerOrder.OnItemClickListener {
                                 orderJson["timeEnd"].toString().toInt(),
                                 orderJson["description"].toString().trim('"'),
                                 orderJson["salary"].toString().toInt(),
-                                orderJson["cityName"].toString().trim('"'),
+                                orderJson["city"].toString().trim('"'),
                                 orderJson["timePublish"].toString().trim('"'),
                                 orderJson["userAuthor"].toString().toInt(),
-                                orderJson["categoryName"].toString().trim('"'),
-                                orderJson["subcategoryName"].toString().trim('"'),
+                                orderJson["category"].toString().trim('"'),
+                                orderJson["subcategory"].toString().trim('"'),
                                 orderJson["dateStart"].toString().trim('"')
                             )
                         )

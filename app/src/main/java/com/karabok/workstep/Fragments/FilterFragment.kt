@@ -1,11 +1,13 @@
 package com.karabok.workstep.Fragments
 
+import android.R
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.core.util.Pair
 import androidx.fragment.app.Fragment
 import com.google.android.material.datepicker.CalendarConstraints
@@ -50,6 +52,9 @@ class FilterFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentFilterBinding.inflate(inflater, container, false)
 
+        val adapter = ArrayAdapter<String>(requireContext(), R.layout.simple_dropdown_item_1line, resources.getStringArray(com.karabok.workstep.R.array.cities))
+        binding.autoCompleteCityFilter.setAdapter(adapter)
+
         val calendarConstraints = CalendarConstraints.Builder()
             .setStart(today)
             .setEnd(sixMonthsForward)
@@ -93,9 +98,7 @@ class FilterFragment : Fragment() {
                 HomeFragment.newInstance(),
                 requireActivity().supportFragmentManager.beginTransaction())
         }
-
     }
-
 
     private fun setDate() {
         DatePickerDialog(
@@ -125,6 +128,112 @@ class FilterFragment : Fragment() {
         val text = "$startDateText - $endDateText"
         dateField.setText(text)
     }
+
+    private fun setSubcategoryCreateOrder() = binding.apply {
+        // устанавливает для выпадающих списков настройки
+        autoCompleteCategoryFilter.setOnItemClickListener { adapterView, view, i, l ->
+            autoCompleteSubcategoryFilter.visibility = View.VISIBLE
+            val arrayCategory = resources.getStringArray(com.karabok.workstep.R.array.category)
+            when(autoCompleteCategoryFilter.text.toString()){
+                arrayCategory[0] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.События_и_развлечения))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[1] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Образование_и_обучение))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[2] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Здоровье_и_красота))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[3] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Ремонт_и_обслуживание))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[4] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Консультирование_и_бизнес))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[5] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Дизайн_и_творчество))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[6] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Веб_разработка))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[7] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Графический_дизайн))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[8] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Письменные_услуги))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[9] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Цифровой_маркетинг))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[10] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.IT_и_программирование))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+
+                arrayCategory[11] -> {
+                    val adapter = ArrayAdapter<String>(
+                        requireContext(),
+                        android.R.layout.simple_dropdown_item_1line,
+                        resources.getStringArray(com.karabok.workstep.R.array.Аудио_и_видео_услуги))
+                    autoCompleteSubcategoryFilter.setAdapter(adapter)
+                }
+            }
+        }
+    }
+
 }
 
 

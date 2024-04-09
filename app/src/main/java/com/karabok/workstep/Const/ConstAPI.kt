@@ -8,7 +8,10 @@ object ConstAPI {
     public val insertProfile: String = "/api/v1/insert/profile/"
     public val deleteProfileId: String = "/api/v1/delete/profileId/"
     public val insertUser: String = "/api/v1/insert/user/"
+    public val insertOrder: String = "/api/v1/insert/order/"
     public val selectProfileUserId: String = "/api/v1/select/userIdProfile/"
+
+    public val emailUser: String = "/api/v1/select/emailUser/"
 
     public val existUserNickname: String = "/api/v1/exist/userNickname/"
     public val existUserEmail: String = "/api/v1/exist/userEmail/"

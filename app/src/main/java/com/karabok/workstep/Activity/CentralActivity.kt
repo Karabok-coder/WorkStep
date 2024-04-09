@@ -2,6 +2,7 @@ package com.karabok.workstep.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.karabok.workstep.Fragments.CreateOrders.CreateOrderList1
 import com.karabok.workstep.Fragments.HomeFragment
 import com.karabok.workstep.R
 import com.karabok.workstep.databinding.ActivityCentralBinding
@@ -26,10 +27,17 @@ class CentralActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
-                R.id.ordersRecycler -> {
+                R.id.ordersOrders -> {
                     supportFragmentManager
                         .beginTransaction()
                         .replace(centralFragment, HomeFragment.newInstance())
+                        .commit()
+                }
+
+                R.id.new_order -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(centralFragment, CreateOrderList1.newInstance())
                         .commit()
                 }
             }

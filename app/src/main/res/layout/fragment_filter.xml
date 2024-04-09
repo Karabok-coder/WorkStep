@@ -52,13 +52,40 @@
                     />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/menu_category"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Выберете категорию">
+                    android:hint="Выберите категорию">
 
                     <AutoCompleteTextView
+                        android:id="@+id/autoCompleteCategoryFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Подкатегория"
+                    android:textSize="22sp"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Выберите подкатегорию">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteSubcategoryFilter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
@@ -85,9 +112,10 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Выберете город">
+                    android:hint="Выберите город">
 
                     <AutoCompleteTextView
+                        android:id="@+id/autoCompleteCityFilter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"

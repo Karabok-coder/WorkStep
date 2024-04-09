@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/ordersRecycler"
+        android:id="@+id/ordersOrders"
         android:enabled="true"
         android:icon="@drawable/orders"
         android:title="Работа"/>

@@ -1,8 +1,11 @@
 package com.karabok.workstep.Utils
 
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.Duration
+import java.util.Date
+import java.util.Locale
 
 class TimeUtil {
     companion object {
@@ -37,6 +40,18 @@ class TimeUtil {
             }
 
             return textTime
+        }
+
+        fun yearMonthToDayMonth(inputDateString: String): String {
+            // переводит из дд.мм.гггг в гггг.мм.дд
+
+            val inputFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+            val date: Date = inputFormat.parse(inputDateString)
+
+            val outputFormat = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
+            val outputDateString: String = outputFormat.format(date)
+
+            return outputDateString
         }
     }
 }

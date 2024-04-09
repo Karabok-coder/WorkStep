@@ -2,4 +2,318 @@
     <string name="app_name">WorkStep</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="cities">
+        <item>"Москва"</item>
+        <item>"Санкт-Петербург"</item>
+        <item>"Новосибирск"</item>
+        <item>"Екатеринбург"</item>
+        <item>"Казань"</item>
+        <item>"Нижний Новгород"</item>
+        <item>"Красноярск"</item>
+        <item>"Челябинск"</item>
+        <item>"Самара"</item>
+        <item>"Уфа"</item>
+        <item>"Краснодар"</item>
+        <item>"Ростов-на-Дону"</item>
+        <item>"Омск"</item>
+        <item>"Воронеж"</item>
+        <item>"Пермь"</item>
+        <item>"Волгоград"</item>
+        <item>"Саратов"</item>
+        <item>"Тюмень"</item>
+        <item>"Тольятти"</item>
+        <item>"Махачкала"</item>
+        <item>"Барнаул"</item>
+        <item>"Ижевск"</item>
+        <item>"Хабаровск"</item>
+        <item>"Ульяновск"</item>
+        <item>"Иркутск"</item>
+        <item>"Владивосток"</item>
+        <item>"Ярославль"</item>
+        <item>"Севастополь"</item>
+        <item>"Ставрополь"</item>
+        <item>"Томск"</item>
+        <item>"Кемерово"</item>
+        <item>"Набережные Челны"</item>
+        <item>"Оренбург"</item>
+        <item>"Новокузнецк"</item>
+        <item>"Балашиха"</item>
+        <item>"Рязань"</item>
+        <item>"Чебоксары"</item>
+        <item>"Пенза"</item>
+        <item>"Калининград"</item>
+        <item>"Липецк"</item>
+        <item>"Киров"</item>
+        <item>"Астрахань"</item>
+        <item>"Тула"</item>
+        <item>"Сочи"</item>
+        <item>"Улан-Удэ"</item>
+        <item>"Курск"</item>
+        <item>"Сургут"</item>
+        <item>"Тверь"</item>
+        <item>"Магнитогорск"</item>
+        <item>"Брянск"</item>
+        <item>"Якутск"</item>
+        <item>"Иваново"</item>
+        <item>"Владимир"</item>
+        <item>"Симферополь"</item>
+        <item>"Калуга"</item>
+        <item>"Белгород"</item>
+        <item>"Чита"</item>
+        <item>"Грозный"</item>
+        <item>"Нижний Тагил"</item>
+        <item>"Волжский"</item>
+        <item>"Смоленск"</item>
+        <item>"Подольск"</item>
+        <item>"Вологда"</item>
+        <item>"Саранск"</item>
+        <item>"Курган"</item>
+        <item>"Череповец"</item>
+        <item>"Архангельск"</item>
+        <item>"Орёл"</item>
+        <item>"Владикавказ"</item>
+        <item>"Нижневартовск"</item>
+        <item>"Йошкар-Ола"</item>
+        <item>"Стерлитамак"</item>
+        <item>"Мурманск"</item>
+        <item>"Мытищи"</item>
+        <item>"Кострома"</item>
+        <item>"Новороссийск"</item>
+        <item>"Химки"</item>
+        <item>"Тамбов"</item>
+        <item>"Нальчик"</item>
+        <item>"Таганрог"</item>
+        <item>"Нижнекамск"</item>
+        <item>"Благовещенск"</item>
+        <item>"Петрозаводск"</item>
+        <item>"Комсомольск-на-Амуре"</item>
+        <item>"Люберцы"</item>
+        <item>"Королёв"</item>
+        <item>"Энгельс"</item>
+        <item>"Великий Новгород"</item>
+        <item>"Шахты"</item>
+        <item>"Братск"</item>
+        <item>"Сыктывкар"</item>
+        <item>"Старый Оскол"</item>
+        <item>"Ангарск"</item>
+        <item>"Дзержинск"</item>
+        <item>"Красногорск"</item>
+        <item>"Орск"</item>
+        <item>"Псков"</item>
+        <item>"Одинцово"</item>
+        <item>"Абакан"</item>
+        <item>"Армавир"</item>
+        <item>"Балаково"</item>
+        <item>"Бийск"</item>
+        <item>"Южно-Сахалинск"</item>
+        <item>"Уссурийск"</item>
+        <item>"Норильск"</item>
+        <item>"Рыбинск"</item>
+        <item>"Прокопьевск"</item>
+        <item>"Щёлково"</item>
+        <item>"Северодвинск"</item>
+        <item>"Новочеркасск"</item>
+        <item>"Альметьевск"</item>
+        <item>"Ачинск"</item>
+        <item>"Ковров"</item>
+        <item>"Домодедово"</item>
+        <item>"Юрга"</item>
+        <item>"Хасавюрт"</item>
+        <item>"Березники"</item>
+        <item>"Камышин"</item>
+        <item>"Кисловодск"</item>
+        <item>"Новомосковск"</item>
+        <item>"Майкоп"</item>
+        <item>"Тагил"</item>
+        <item>"Прохладный"</item>
+        <item>"Серпухов"</item>
+        <item>"Невинномысск"</item>
+        <item>"Магадан"</item>
+        <item>"Крымск"</item>
+        <item>"Нефтекамск"</item>
+        <item>"Сызрань"</item>
+        <item>"Батайск"</item>
+        <item>"Соликамск"</item>
+        <item>"Новошахтинск"</item>
+        <item>"Димитровград"</item>
+        <item>"Находка"</item>
+        <item>"Новокуйбышевск"</item>
+        <item>"Дербент"</item>
+        <item>"Каменск-Уральский"</item>
+        <item>"Туапсе"</item>
+        <item>"Ступино"</item>
+        <item>"Евпатория"</item>
+        <item>"Ноябрьск"</item>
+        <item>"Пушкино"</item>
+        <item>"Арзамас"</item>
+        <item>"Воскресенск"</item>
+        <item>"Ухта"</item>
+        <item>"Ессентуки"</item>
+        <item>"Жуковский"</item>
+        <item>"Серов"</item>
+        <item>"Сергиев Посад"</item>
+        <item>"Видное"</item>
+        <item>"Кинешма"</item>
+        <item>"Ейск"</item>
+        <item>"Раменское"</item>
+        <item>"Глазов"</item>
+        <item>"Долгопрудный"</item>
+        <item>"Камышлов"</item>
+        <item>"Новотроицк"</item>
+        <item>"Канск"</item>
+        <item>"Гатчина"</item>
+        <item>"Елец"</item>
+        <item>"Рубцовск"</item>
+        <item>"Туймазы"</item>
+        <item>"Краснокаменск"</item>
+        <item>"Кропоткин"</item>
+        <item>"Первоуральск"</item>
+        <item>"Ленинск-Кузнецкий"</item>
+        <item>"Новоуральск"</item>
+        <item>"Каменск-Шахтинский"</item>
+        <item>"Озёрск"</item>
+        <item>"Северск"</item>
+        <item>"Губкин"</item>
+        <item>"Новоалтайск"</item>
+        <item>"Краснотурьинск"</item>
+        <item>"Саяногорск"</item>
+        <item>"Гуково"</item>
+        <item>"Верхняя Пышма"</item>
+        <item>"Бугульма"</item>
+        <item>"Белорецк"</item>
+        <item>"Нерюнгри"</item>
+        <item>"Бердск"</item>
+        <item>"Амурская область"</item>
+        <item>"Лабытнанги"</item>
+        <item>"Чайковский"</item>
+        <item>"Геленджик"</item>
+        <item>"Кстово"</item>
+        <item>"Артём"</item>
+        <item>"Северобайкальск"</item>
+        <item>"Железногорск"</item>
+        <item>"Назрань"</item>
+        <item>"Реутов"</item>
+        <item>"Междуреченск"</item>
+        <item>"Сарапул"</item>
+        <item>"Наро-Фоминск"</item>
+        <item>"Петропавловск-Камчатский"</item>
+        <item>"Полевской"</item>
+        <item>"Бузулук"</item>
+        <item>"Щёкино"</item>
+        <item>"Минеральные Воды"</item>
+        <item>"Краснокамск"</item>
+        <item>"Орехово-Зуево"</item>
+    </string-array>
+
+    <string-array name="Веб_разработка">
+        <item>"Веб-дизайн"</item>
+        <item>"Фронтенд-разработка"</item>
+        <item>"Бэкенд-разработка"</item>
+        <item>"Full-stack разработка"</item>
+        <item>"E-commerce разработка"</item>
+        <item>"Веб-приложения"</item>
+    </string-array>
+
+    <string-array name="Графический_дизайн">
+        <item>"Логотипы и брендинг"</item>
+        <item>"Иллюстрации и арты"</item>
+        <item>"UI/UX дизайн"</item>
+        <item>"Макеты и прототипы"</item>
+        <item>"Анимация и видео-монтаж"</item>
+    </string-array>
+
+    <string-array name="Письменные_услуги">
+        <item>"Копирайтинг и редактирование"</item>
+        <item>"Техническое письмо"</item>
+        <item>"Создание контента для блогов"</item>
+        <item>"Корректура и правописание"</item>
+        <item>"Транскрипция и перевод"</item>
+    </string-array>
+
+    <string-array name="Цифровой_маркетинг">
+        <item>"SEO и аналитика"</item>
+        <item>"Социальные медиа-стратегии"</item>
+        <item>"Электронная почта маркетинг"</item>
+        <item>"PPC реклама (Pay-per-click)"</item>
+        <item>"Аффилированный маркетинг"</item>
+    </string-array>
+
+    <string-array name="IT_и_программирование">
+        <item>"Мобильная разработка"</item>
+        <item>"Игровое программирование"</item>
+        <item>"Архитектура ПО"</item>
+        <item>"Тестирование ПО"</item>
+        <item>"Базы данных и администрирование"</item>
+    </string-array>
+
+    <string-array name="Аудио_и_видео_услуги">
+        <item>"Музыкальная продукция"</item>
+        <item>"Звуковое оформление и сведение"</item>
+        <item>"Видеомонтаж и постпродакшн"</item>
+        <item>"Видеоанимация и VFX"</item>
+        <item>"Голосовое озвучивание"</item>
+    </string-array>
+
+    <string-array name="Дизайн_и_творчество">
+        <item>"Интерьерный дизайн"</item>
+        <item>"Фотография и видеография"</item>
+        <item>"Модельное искусство"</item>
+        <item>"Живопись и графика"</item>
+        <item>"Украшение и рукоделие"</item>
+    </string-array>
+
+    <string-array name="Консультирование_и_бизнес">
+        <item>"Бухгалтерия и финансы"</item>
+        <item>"Маркетинг и реклама"</item>
+        <item>"Юридические услуги"</item>
+        <item>"Консалтинг и управление проектами"</item>
+        <item>"Обучение и тренинги"</item>
+    </string-array>
+
+    <string-array name="Ремонт_и_обслуживание">
+        <item>"Строительные услуги"</item>
+        <item>"Ремонт техники и оборудования"</item>
+        <item>"Автомобильный сервис"</item>
+        <item>"Сантехника и отопление"</item>
+        <item>"Электромонтажные работы"</item>
+    </string-array>
+
+    <string-array name="Здоровье_и_красота">
+        <item>"Массаж и физиотерапия"</item>
+        <item>"Косметология и эстетика"</item>
+        <item>"Фитнес и тренировки"</item>
+        <item>"Психологические консультации"</item>
+    </string-array>
+
+    <string-array name="Образование_и_обучение">
+        <item>"Репетиторство и обучение"</item>
+        <item>"Языковые курсы и перевод"</item>
+        <item>"Разработка учебных материалов"</item>
+        <item>"Консультации по карьере и обучению"</item>
+        <item>"Онлайн-курсы и вебинары"</item>
+    </string-array>
+
+    <string-array name="События_и_развлечения">
+        <item>"Организация мероприятий"</item>
+        <item>"Аренда оборудования и мест"</item>
+        <item>"Анимация и шоу-программы"</item>
+        <item>"Фотосъемка и видеосъемка мероприятий"</item>
+        <item>"Услуги ведущего и артиста"</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>"События и развлечения"</item>
+        <item>"Образование и обучение"</item>
+        <item>"Здоровье и красота"</item>
+        <item>"Ремонт и обслуживание"</item>
+        <item>"Консультирование и бизнес"</item>
+        <item>"Дизайн и творчество"</item>
+        <item>"Веб разработка"</item>
+        <item>"Графический дизайн"</item>
+        <item>"Письменные услуги"</item>
+        <item>"Цифровой маркетинг"</item>
+        <item>"IT и программирование"</item>
+        <item>"Аудио и видео услуги"</item>
+    </string-array>
 </resources>

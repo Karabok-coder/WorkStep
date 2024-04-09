@@ -1,5 +1,6 @@
 package com.karabok.workstep.Fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -15,9 +16,10 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.JsonParser
 import com.karabok.workstep.Activity.CentralActivity
 import com.karabok.workstep.Const.ConstAPI
+import com.karabok.workstep.Const.ConstApp
 import com.karabok.workstep.Const.ConstIntent
 import com.karabok.workstep.DbApi.RequestDbApi
-import com.karabok.workstep.Loguru.Luna
+import com.karabok.workstep.Utils.LoginToken
 import com.karabok.workstep.Utils.Rand
 import com.karabok.workstep.Utils.TimeUtil
 import com.karabok.workstep.databinding.FragmentCodeRegBinding
@@ -112,6 +114,7 @@ class CodeRegFragment : Fragment() {
         }
     }
 
+
     private fun applyCode(code: String){
         var genCode: String = ""
         if (randSeed != null){
@@ -140,16 +143,19 @@ class CodeRegFragment : Fragment() {
                             .toString()
                     )
 
-                    val userJson = JsonParser.parseString(insertJson).asJsonObject.get("val").asInt
+                    val userInsertId = JsonParser.parseString(insertJson).asJsonObject.get("val").asInt
 
                     // Insert new Profile
                     RequestDbApi.insert(
                         ConstAPI.insertProfile,
                         JSONObject()
-                            .put("userId", userJson)
+                            .put("userId", userInsertId)
                             .put("firstName", firstName)
                             .toString()
                     )
+
+                    val sharedPreferences = activity?.getSharedPreferences(ConstApp.prefToken, Context.MODE_PRIVATE)
+                    LoginToken.saveToken("${userInsertId}__${email}__${nickname}", sharedPreferences)
                 }.join()
             }
             binding.progressCode.visibility = INVISIBLE
