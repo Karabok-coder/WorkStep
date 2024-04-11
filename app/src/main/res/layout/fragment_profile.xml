@@ -3,8 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragments.ProfileFragment">
+
+    <LinearLayout
+        style="@style/topLayInside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textTopLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Профиль" />
+
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:indicatorColor="?attr/colorOnPrimaryContainer"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,21 +57,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
-                        android:text="Имя: Николай"/>
+                        android:text="Имя:"/>
 
                     <TextView
                         android:id="@+id/nicknameProfile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
-                        android:text="Никнейм: Karabok"/>
+                        android:text="Никнейм:"/>
 
                     <TextView
                         android:id="@+id/emailProfile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
-                        android:text="Почта: Karabok122133@gmail.com"/>
+                        android:text="Почта:"/>
 
                 </LinearLayout>
 

@@ -42,14 +42,14 @@ class TimeUtil {
             return textTime
         }
 
-        fun yearMonthToDayMonth(inputDateString: String): String {
+        fun yearMonthToDayMonth(inputDateString: String?): String? {
             // переводит из дд.мм.гггг в гггг.мм.дд
 
             val inputFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
-            val date: Date = inputFormat.parse(inputDateString)
+            val date: Date? = inputDateString?.let { inputFormat.parse(it) }
 
             val outputFormat = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
-            val outputDateString: String = outputFormat.format(date)
+            val outputDateString: String? = date?.let { outputFormat.format(it) }
 
             return outputDateString
         }

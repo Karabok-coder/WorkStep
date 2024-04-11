@@ -151,6 +151,7 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/salaryStart"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="От"
@@ -168,6 +169,7 @@
                         android:layout_weight="1">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/salaryEnd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="До"
@@ -199,7 +201,7 @@
                     android:hint="Выберите диапазон дат">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEditText"
+                        android:id="@+id/dateFilter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
@@ -213,6 +215,13 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/searchFilterBtn"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Найти объявления"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
         </LinearLayout>
 
     </LinearLayout>

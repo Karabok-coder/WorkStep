@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText
+import com.karabok.workstep.Const.ConstIntent
+import com.karabok.workstep.Loguru.Luna
 import com.karabok.workstep.Utils.FragmentHelper
 import com.karabok.workstep.databinding.FragmentFilterBinding
 import java.text.SimpleDateFormat
@@ -46,14 +48,16 @@ class FilterFragment : Fragment() {
             dateAndTime[Calendar.YEAR] = year
             dateAndTime[Calendar.MONTH] = monthOfYear
             dateAndTime[Calendar.DAY_OF_MONTH] = dayOfMonth
-            setInitialDateTime()
         }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentFilterBinding.inflate(inflater, container, false)
 
-        val adapter = ArrayAdapter<String>(requireContext(), R.layout.simple_dropdown_item_1line, resources.getStringArray(com.karabok.workstep.R.array.cities))
-        binding.autoCompleteCityFilter.setAdapter(adapter)
+
+        val adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, resources.getStringArray( com.karabok.workstep.R.array.category))
+        binding.autoCompleteCategoryFilter.setAdapter(adapter)
+
+        setSubcategoryCreateOrder()
 
         val calendarConstraints = CalendarConstraints.Builder()
             .setStart(today)
@@ -67,19 +71,19 @@ class FilterFragment : Fragment() {
             .build()
 
         datePicker.addOnPositiveButtonClickListener { selection ->
-            binding.textInputEditText.isActivated = true
+            binding.dateFilter.isActivated = true
             startDate = selection.first
             endDate = selection.second
-            updateDateFieldText(binding.textInputEditText)
-            binding.textInputEditText.isActivated = true
+            updateDateFieldText(binding.dateFilter)
+            binding.dateFilter.isActivated = true
         }
 
         datePicker.addOnCancelListener {
-            binding.textInputEditText.isActivated = true
+            binding.dateFilter.isActivated = true
         }
 
-        binding.textInputEditText.setOnClickListener {
-            binding.textInputEditText.isActivated = false
+        binding.dateFilter.setOnClickListener {
+            binding.dateFilter.isActivated = false
             datePicker.show(parentFragmentManager, datePicker.toString())
         }
 
@@ -89,33 +93,42 @@ class FilterFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-//        binding.dateButton.setOnClickListener {
-//            setDate()
-//        }
-
         binding.backFilter.setOnClickListener {
             FragmentHelper.launchFragment(
                 HomeFragment.newInstance(),
                 requireActivity().supportFragmentManager.beginTransaction())
         }
-    }
 
-    private fun setDate() {
-        DatePickerDialog(
-            requireContext(), dateSetListener,
-            dateAndTime[Calendar.YEAR],
-            dateAndTime[Calendar.MONTH],
-            dateAndTime[Calendar.DAY_OF_MONTH]
-        ).show()
-    }
+        binding.searchFilterBtn.setOnClickListener {
 
-    // установка начальных даты и времени
-    private fun setInitialDateTime() {
-//        binding.dateButton.text = DateUtils.formatDateTime(
-//            requireContext(),
-//            dateAndTime.timeInMillis,
-//            DateUtils.FORMAT_SHOW_DATE
-//        )
+            Luna.log(binding.dateFilter.text.toString())
+
+            val fragmentManager = activity?.supportFragmentManager
+            val newFragment = HomeFragment.newInstance()
+
+            val bundle: Bundle = Bundle().apply {
+                putString(ConstIntent.categoryIntent, binding.autoCompleteCategoryFilter.text.toString())
+                putString(ConstIntent.subcategoryIntent, binding.autoCompleteSubcategoryFilter.text.toString())
+                putString(ConstIntent.cityIntent, binding.autoCompleteCityFilter.text.toString())
+                putString(ConstIntent.salaryStartIntent, binding.salaryStart.text.toString())
+                putString(ConstIntent.salaryEndIntent, binding.salaryEnd.text.toString())
+
+                if (binding.dateFilter.text.toString() == "" || binding.dateFilter.text.toString() == ""){
+                    putString(ConstIntent.dateStartIntent, binding.dateFilter.text.toString())
+                    putString(ConstIntent.dateEndIntent, binding.dateFilter.text.toString())
+                }
+                else{
+                    putString(ConstIntent.dateStartIntent, binding.dateFilter.text.toString().split(" - ")[0])
+                    putString(ConstIntent.dateEndIntent, binding.dateFilter.text.toString().split(" - ")[1])
+                }
+            }
+            newFragment.arguments = bundle
+
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(com.karabok.workstep.R.id.central_fragment, newFragment)
+            transaction?.addToBackStack(null)
+            transaction?.commit()
+        }
     }
 
     private fun updateDateFieldText(dateField: TextInputEditText) {

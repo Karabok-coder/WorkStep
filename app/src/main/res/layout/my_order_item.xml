@@ -27,35 +27,17 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/time"
+            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="С 9:00 до 21:00 (12 часов)"/>
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="С 9:00 до 21:00 (12 часов)"/>
-
-            <TextView
-                android:id="@+id/dateOrders"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:gravity="right"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:layout_gravity="left|center"
-                android:text="2023-09-10"/>
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/description"
@@ -99,6 +81,13 @@
                 android:text="334233123 руб"/>
         </LinearLayout>
 
+        <Button
+            android:id="@+id/deleteMyOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Удалить"
+            style="@style/Widget.Material3.Button.TextButton">
+        </Button>
 
     </LinearLayout>
 

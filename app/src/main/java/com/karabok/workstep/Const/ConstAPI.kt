@@ -12,6 +12,11 @@ object ConstAPI {
     public val selectProfileUserId: String = "/api/v1/select/userIdProfile/"
 
     public val selectEmailUser: String = "/api/v1/select/emailUser/"
+    public val selectOrderUserId: String = "/api/v1/select/orderUserId/"
+    public val deleteOrderId: String = "/api/v1/delete/orderId/"
+
+    public val updatePasswordUser: String = "/api/v1/update/user/password/"
+    public val selectOrdersFilter: String = "/api/v1/select/ordersFilter/"
 
     public val selectNicknameUser: String = "/api/v1/select/nicknameUser/"
     public val updateNicknameUser: String = "/api/v1/update/user/nickname/"

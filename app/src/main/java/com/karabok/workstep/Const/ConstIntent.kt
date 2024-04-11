@@ -17,4 +17,13 @@ object ConstIntent {
     public val dateStartNewOrder: String = "dateStartNewOrder"
 
     public val entityBundle: String = "Entity"
+
+
+    public val categoryIntent: String = "categoryIntent"
+    public val subcategoryIntent: String = "subcategoryIntent"
+    public val cityIntent: String = "cityIntent"
+    public val salaryStartIntent: String = "salaryStartIntent"
+    public val salaryEndIntent: String = "salaryEndIntent"
+    public val dateStartIntent: String = "dateStartIntent"
+    public val dateEndIntent: String = "dateEndIntent"
 }

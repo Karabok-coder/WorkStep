@@ -3,24 +3,13 @@ package com.karabok.workstep.Fragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.INVISIBLE
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import com.karabok.workstep.Const.ConstAPI
 import com.karabok.workstep.Const.ConstIntent
-import com.karabok.workstep.DbApi.RequestDbApi
 import com.karabok.workstep.EntityTab.EntityOrders
-import com.karabok.workstep.EntityTab.EntityProfile
-import com.karabok.workstep.Loguru.Luna
-import com.karabok.workstep.R
 import com.karabok.workstep.Utils.FragmentHelper
 import com.karabok.workstep.Utils.TimeUtil
 import com.karabok.workstep.databinding.FragmentOrderBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 
 class OrderFragment : Fragment() {
@@ -63,6 +52,9 @@ class OrderFragment : Fragment() {
         timeWork.text = "C $timeStart по $timeEnd"
         description.text = item.description
         salary.text = "${item.salary} руб"
-        fullAddress.text = item.cityName
+        fullAddress.text = item.city
+        categoryOrder.text = item.category
+        subcategoryOrder.text = item.subcategory
+        startDateWork.text = item.dateStart
     }
 }

@@ -10,11 +10,11 @@ data class EntityOrders(
     val timeEnd: Int,
     val description: String?,
     val salary: Int,
-    val cityName: String?,
+    val city: String?,
     val timePublish: String?,
     val userAuthor: Int,
-    val categoryName: String?,
-    val subcategoryName: String?,
+    val category: String?,
+    val subcategory: String?,
     val dateStart: String?) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -38,11 +38,11 @@ data class EntityOrders(
         parcel.writeInt(timeEnd)
         parcel.writeString(description)
         parcel.writeInt(salary)
-        parcel.writeString(cityName)
+        parcel.writeString(city)
         parcel.writeString(timePublish)
         parcel.writeInt(userAuthor)
-        parcel.writeString(categoryName)
-        parcel.writeString(subcategoryName)
+        parcel.writeString(category)
+        parcel.writeString(subcategory)
         parcel.writeString(dateStart)
     }
 
