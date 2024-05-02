@@ -95,17 +95,6 @@
                     android:text="Регистрация"
                     android:textSize="13sp" />
 
-                <Button
-                    android:id="@+id/forgot_password"
-                    style="@style/Widget.Material3.Button.TextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:elevation="0dp"
-                    android:layout_marginStart="5dp"
-                    android:text="Забыли пароль?"
-                    android:textSize="13sp" />
-
             </LinearLayout>
 
             <Button
@@ -120,48 +109,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"/>
 
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:background="@drawable/line"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="или"
-                    android:textSize="16sp" />
-
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:background="@drawable/line"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
-
-
-            <Button
-                android:id="@+id/yandex_button_sign_in"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#000000"
-                android:minHeight="56dp"
-                android:text="Войти с Яндекс ID"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                app:cornerRadius="12dp"
-                app:icon="@drawable/yandex_logo"
-                app:iconGravity="textStart"
-                app:iconTint="@null" />
 
         </LinearLayout>
     </LinearLayout>
