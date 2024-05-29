@@ -169,6 +169,26 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/checkPolitic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/MaterialAlertDialog.Material3"
+                            />
+
+                        <TextView
+                            android:id="@+id/textPolitic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Я принимаю условия Политики конфиденциальности"
+                            android:layout_gravity="center"
+                            />
+                    </LinearLayout>
+
                     <Button
                         android:id="@+id/have_acc"
                         style="@style/Widget.Material3.Button.TextButton"

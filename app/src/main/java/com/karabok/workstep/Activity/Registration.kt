@@ -3,11 +3,14 @@ package com.karabok.workstep.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.text.Html
 import android.text.TextWatcher
+import android.text.method.LinkMovementMethod
 import android.view.View.GONE
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -49,6 +52,16 @@ class Registration : AppCompatActivity() {
         }
 
         initLayListeners()
+
+        val text = "Я принимаю условия <a href='https://work-step.ru/politic'>Политики конфиденциальности</a>"
+        binding.textPolitic.text = HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        binding.textPolitic.movementMethod = LinkMovementMethod.getInstance()
+
+        binding.signUp.isEnabled = false
+
+        binding.checkPolitic.setOnCheckedChangeListener { _, isChecked ->
+            binding.signUp.isEnabled = isChecked
+        }
     }
 
     private fun registration() {
