@@ -208,11 +208,9 @@ class Registration : AppCompatActivity() {
             changeTextListeners(nickname)
 
             onePassword.addTextChangedListener {
-                if(onePassword.text.toString().trim().length >= 10){
-                    val point: Int = determiningStrength()
-                    binding.strengthPassword.progress = point
-                    binding.textStrengthPassword.text = "Сложность пароля: $point"
-                }
+                val point: Int = determiningStrength()
+                binding.strengthPassword.progress = point
+                binding.textStrengthPassword.text = "Сложность пароля: $point"
             }
         }
     }
