@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="На указанную почту было отправлено письмо с шестизначным кодом, введите его сюда"
+            android:text="Введите код, который был отправлен вам на почту"
             android:layout_gravity="center"
             android:textSize="14sp"
             android:layout_marginBottom="10dp"

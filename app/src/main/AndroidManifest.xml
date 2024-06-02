@@ -19,7 +19,6 @@
         <activity
             android:name=".Activity.CentralActivity"
             android:exported="false" />
-        <service android:name=".NotificationService" />
         <activity
             android:name=".Activity.Registration"
             android:exported="false" />
