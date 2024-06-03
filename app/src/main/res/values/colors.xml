@@ -18,8 +18,8 @@
     <color name="md_theme_light_errorContainer">#ffffff</color>
     <color name="md_theme_light_onError">#ffdad6</color>
     <color name="md_theme_light_onErrorContainer">#410002</color>
-    <color name="md_theme_light_background">#FFFBFF</color>
-    <color name="md_theme_light_onBackground">#201A19</color>
+    <color name="md_theme_light_background">#fffbff</color>
+    <color name="md_theme_light_onBackground">#201a19</color>
     <color name="md_theme_light_surface">#f9f9ff</color>
     <color name="md_theme_light_onSurface">#1a1c20</color>
     <color name="md_theme_light_surfaceVariant">#d9d9e0</color>
@@ -29,7 +29,7 @@
     <color name="md_theme_light_inverseSurface">#2e3036</color>
     <color name="md_theme_light_inversePrimary">#acc7ff</color>
     <color name="md_theme_light_shadow">#000000</color>
-    <color name="md_theme_light_surfaceTint">#A73921</color>
+    <color name="md_theme_light_surfaceTint">#a73921</color>
     <color name="md_theme_light_outlineVariant">#c4c6d0</color>
     <color name="md_theme_light_scrim">#000000</color>
 
@@ -50,7 +50,7 @@
     <color name="md_theme_dark_onError">#690005</color>
     <color name="md_theme_dark_onErrorContainer">#ffdad6</color>
     <color name="md_theme_dark_background">#201A19</color>
-    <color name="md_theme_dark_onBackground">#EDE0DD</color>
+    <color name="md_theme_dark_onBackground">#ede0dd</color>
     <color name="md_theme_dark_surface">#111318</color>
     <color name="md_theme_dark_onSurface">#e2e2e9</color>
     <color name="md_theme_dark_surfaceVariant">#534340</color>
@@ -60,7 +60,7 @@
     <color name="md_theme_dark_inverseSurface">#e2e2e9</color>
     <color name="md_theme_dark_inversePrimary">#425e91</color>
     <color name="md_theme_dark_shadow">#0000000</color>
-    <color name="md_theme_dark_surfaceTint">#FFB4A4</color>
+    <color name="md_theme_dark_surfaceTint">#ffb4a4</color>
     <color name="md_theme_dark_outlineVariant">#44474e</color>
     <color name="md_theme_dark_scrim">#000000</color>
 </resources>
