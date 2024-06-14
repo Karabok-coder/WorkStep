@@ -74,6 +74,7 @@
                             android:id="@+id/email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:singleLine="true"
                             android:hint="Почта" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -148,6 +149,7 @@
                             android:id="@+id/first_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:singleLine="true"
                             android:hint="Имя" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -165,6 +167,7 @@
                             android:id="@+id/nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:singleLine="true"
                             android:hint="Никнейм" />
 
                     </com.google.android.material.textfield.TextInputLayout>
