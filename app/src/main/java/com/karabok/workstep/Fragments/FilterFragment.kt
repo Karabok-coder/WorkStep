@@ -54,8 +54,11 @@ class FilterFragment : Fragment() {
         binding = FragmentFilterBinding.inflate(inflater, container, false)
 
 
-        val adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, resources.getStringArray( com.karabok.workstep.R.array.category))
+        var adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, resources.getStringArray( com.karabok.workstep.R.array.category))
         binding.autoCompleteCategoryFilter.setAdapter(adapter)
+
+        adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_dropdown_item_1line, resources.getStringArray(com.karabok.workstep.R.array.cities))
+        binding.autoCompleteCityFilter.setAdapter(adapter)
 
         setSubcategoryCreateOrder()
 
